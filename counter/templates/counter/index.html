@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> hello counter </title>
+  </head>
+  <body>
+    {% for counter in counters %}
+    <div>
+      <div>
+	{{ counter }}
+      </div>
+    </div>
+    {% endfor %}
+
+    <hr>
+
+    <div>
+      <form action="{% url 'counter:up' %}" method="post">
+	{% csrf_token %}
+	<input type="submit" value="up">
+      </form>
+      <form action="{% url 'counter:down' %}" method="post">
+	{% csrf_token %}
+	<input type="submit" value="down">
+      </form>
+      <form action="{% url 'counter:clear' %}" method="post">
+	{% csrf_token %}
+	<input type="submit" value="clear">
+      </form>
+    </div>
+  </body>
+</html>
