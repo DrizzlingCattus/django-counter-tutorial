@@ -2,7 +2,13 @@ FROM python:3.7.6-stretch
 
 RUN pip install django
 
-WORKDIR /root
+RUN mkdir django
 
-COPY .
+WORKDIR /django
+
+EXPOSE 8000
+
+COPY . .
+
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]
 

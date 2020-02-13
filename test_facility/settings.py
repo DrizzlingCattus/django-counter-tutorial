@@ -25,7 +25,9 @@ SECRET_KEY = '5b)k+gns!0m(_uwq-)of+prrx(6rxvz#-#yvmfit65%-x%df0#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'lib.stenrine.com',
+]
 
 
 # Application definition
